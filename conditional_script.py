@@ -109,3 +109,19 @@ def data_cond(file_name,batch_id ,pep_open,pep_close,sanc_open ,final_file_name)
                 s_swap = s.replace("/","-")
                 gen01[index] = s_swap
         return gen01
+
+
+# read the configuration file and pass the data as parameter
+
+def get_data(file_name):
+    records = []
+    with open(filename) as readfile:
+        next(readfile)
+        lines = readfile.readlines()
+        for line in lines :
+            str_rec = line.split("|")
+            INPUTFILE = str_rec[0]
+            BATCH_ID = str_rec[1]
+            #.... so on to add parameter & pass the parameter to the function below
+
+            data_cond(INPUTFILE,BATCH_ID)
